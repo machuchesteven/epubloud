@@ -1,3 +1,4 @@
+import 'package:epubloud/Presentations/Screens/setting_page.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -7,7 +8,6 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.brown,
           title: const Text("EpubLoud")
           ),
           body: Column(
@@ -25,7 +25,15 @@ class Homepage extends StatelessWidget {
               Container(
               margin: const EdgeInsets.all(20.0),
               child: const Text("Hi Readers"),
-              )
+              ),
+              // ignore: avoid_print
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: ((context) => const SettingsPage()))
+                  );
+                  },
+                child: const Text("Settings"))
             ],
           ),
           floatingActionButton: FloatingActionButton(onPressed: () => print("Consoled"),
